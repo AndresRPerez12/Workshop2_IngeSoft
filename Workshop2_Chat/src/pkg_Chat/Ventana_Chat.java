@@ -143,7 +143,9 @@ public class Ventana_Chat extends javax.swing.JFrame {
     //      Agrega el Mensaje nuevo al Chat, incluyendo la persona que lo mandó
     //      Llama la función en el Main que actualiza los mensajes para todos.
     private void enviar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviar_btnActionPerformed
-        chat.mensajes.add( new Mensaje( persona , Texto_mensaje.getText() ) );
+        String text = Texto_mensaje.getText();
+        if( text.length() == 0 ) return;
+        chat.mensajes.add( new Mensaje( persona , text ) );
         Display_pnl.revalidate();
         Display_pnl.repaint();
         Texto_mensaje.setText("");

@@ -96,7 +96,9 @@ public class Ventana_Inicio extends javax.swing.JFrame {
     //      y le dice en que chat esta
     private void inicio_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_btnMouseClicked
         //dispose();
-        Ventana_Chat v1c = new Ventana_Chat(name_txtfield.getText(),chat);
+        String text = name_txtfield.getText();
+        if( text.length() == 0 ) return;
+        Ventana_Chat v1c = new Ventana_Chat(text,chat);
         v1c.setVisible(true);
     }//GEN-LAST:event_inicio_btnMouseClicked
 
